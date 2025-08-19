@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="fw-bold">Master Category</h1>
+<h1 class="fw-bold">Master Author</h1>
 <div class="card">
     <div class="card-body">
 
@@ -18,7 +18,7 @@
                 <th>DOB</th>
                 <th>Age</th>
                 <th>Address</th>
-                <th>#</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>

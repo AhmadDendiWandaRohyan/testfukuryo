@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 
 use App\Http\Controllers\PageController;
 
@@ -70,3 +71,12 @@ Route::post('/authors', [AuthorController::class, 'store'])->name('pages.storeau
 Route::get('/authors/{author}/edit', [AuthorController::class, 'edit'])->name('pages.editauthor');
 Route::put('/authors/{author}', [AuthorController::class, 'update'])->name('pages.updateauthor');
 Route::delete('/authors/{author}', [AuthorController::class, 'destroy'])->name('pages.destroyauthor');
+
+
+
+
+Route::get('/book', [BookController::class, 'index'])->name('pages.book');
+Route::post('/book', [BookController::class, 'store'])->name('pages.storebook');
+Route::put('/book/{book}', [BookController::class, 'update'])->name('pages.updatebook');
+Route::delete('/book/{book}', [BookController::class, 'destroy'])->name('pages.deletebook');
+

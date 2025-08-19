@@ -15,10 +15,10 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>NAME</th>
-                    <th>DESCRIPTION</th>
-                    <th>STATUS</th>
-                    <th>ACTION</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +38,7 @@
                         <a href="{{ route('pages.showcategory', $category->id) }}" class="btn btn-sm btn-info text-white">
                             <i class="bi bi-eye"></i>
                         </a>
+                        {{-- edit --}} 
                         <a href="{{ route('pages.editcategory', $category->id) }}" class="btn btn-sm btn-warning text-white">
                             <i class="bi bi-pencil"></i>
                         </a>
