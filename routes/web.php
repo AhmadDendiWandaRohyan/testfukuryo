@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorController;
 
 use App\Http\Controllers\PageController;
 
@@ -57,3 +58,15 @@ Route::get('/author', function () {
 Route::get('/book', function () {
     return view('pages.book', ['title' => 'Master Book']);
 })->name('pages.book');
+
+
+
+
+Route::get('/authors', [AuthorController::class, 'index'])->name('pages.author');
+// Route::get('/authors/create', [AuthorController::class, 'create'])->name('pages.createauthor');
+Route::get('/authors/create', [AuthorController::class, 'create'])->name('pages.createauthor');
+
+Route::post('/authors', [AuthorController::class, 'store'])->name('pages.storeauthor');
+Route::get('/authors/{author}/edit', [AuthorController::class, 'edit'])->name('pages.editauthor');
+Route::put('/authors/{author}', [AuthorController::class, 'update'])->name('pages.updateauthor');
+Route::delete('/authors/{author}', [AuthorController::class, 'destroy'])->name('pages.destroyauthor');

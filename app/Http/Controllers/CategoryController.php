@@ -21,13 +21,13 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('pages.category', compact('categories'))
+        return view('pages.mastercategory.category', compact('categories'))
             ->with('title', 'Master Category');
     }
 
     public function create()
     {
-        return view('pages.createcategory')
+        return view('pages.mastercategory.createcategory')
             ->with('title', 'Tambah Category');
     }
 
@@ -47,13 +47,13 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return view('pages.showcategory', compact('category'))
+        return view('pages.mastercategory.showcategory', compact('category'))
             ->with('title', 'Detail Category');
     }
 
     public function edit(Category $category)
     {
-        return view('pages.editcategory', compact('category'))
+        return view('pages.mastercategory.editcategory', compact('category'))
             ->with('title', 'Edit Category');
     }
 
@@ -67,7 +67,7 @@ class CategoryController extends Controller
 
         $category->update($request->all());
 
-        return redirect()->route('pages.category')
+        return redirect()->route('pages.mastercategory.category')
             ->with('success', 'Category updated successfully.');
     }
 
@@ -75,7 +75,7 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('pages.category')
+        return redirect()->route('pages.mastercategory.category')
             ->with('success', 'Category deleted successfully.');
     }
 }
